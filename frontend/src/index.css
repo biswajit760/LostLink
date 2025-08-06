@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+.poppins-light {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 900;
+  font-style: normal;
+}
+*{
+   font-family: "Poppins", sans-serif !important;
+}
