@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Card from "../Components/Card";
 import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import axios from "axios";
 import LostItemCard from "../Components/LostItemCard";
-const serverUrl = "http://localhost:5000";
+import { authDataContext } from '../context/AuthContext';
 
 const LostReports = () => {
      const [lostItems, setLostItems] = useState([]);
+     const { serverUrl } = useContext(authDataContext);
+
      let navigate = useNavigate();
 
      useEffect(() => {

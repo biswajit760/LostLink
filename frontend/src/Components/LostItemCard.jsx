@@ -3,11 +3,12 @@ import { authDataContext } from '../context/AuthContext';
 import { User, Phone, MapPin, Calendar } from "lucide-react";
 import toast from "react-hot-toast";
 import axios from "axios";
-const serverUrl = "http://localhost:5000";
+
 
 const LostItemCard = ({ item }) => {
   const { userData, setUserData } = useContext(authDataContext);
-   const handleDelete = async () => {
+  const { serverUrl } = useContext(authDataContext); 
+  const handleDelete = async () => {
     
   
     try {

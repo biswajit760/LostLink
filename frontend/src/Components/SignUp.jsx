@@ -6,13 +6,12 @@ import { IoIosArrowBack } from "react-icons/io";
 import toast from "react-hot-toast";
 import { authDataContext } from '../context/AuthContext';
 
-const serverUrl = "http://localhost:5000";
-
 const SignUp = () => {
   let {userData, setUserData} = useContext(authDataContext)
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const { serverUrl } = useContext(authDataContext);
 
   const navigate = useNavigate();
 

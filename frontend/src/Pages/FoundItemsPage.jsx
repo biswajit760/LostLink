@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext  } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import FoundItemCard from "../Components/FoundItemCard";
+import { authDataContext } from '../context/AuthContext';
 
-const serverUrl = "http://localhost:5000";
 
 const FoundItemsPage = () => {
   const [foundItems, setFoundItems] = useState([]);
+  const { serverUrl } = useContext(authDataContext);
   const navigate = useNavigate();
 
   useEffect(() => {

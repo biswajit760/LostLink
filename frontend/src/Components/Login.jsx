@@ -6,12 +6,12 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { authDataContext } from '../context/AuthContext';
 
-const serverUrl = "http://localhost:5000";
 
 const Login = () => {
   let {userData, setUserData} = useContext(authDataContext)
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { serverUrl } = useContext(authDataContext);
   
 
   const navigate = useNavigate();

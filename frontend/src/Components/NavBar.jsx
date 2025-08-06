@@ -10,13 +10,13 @@ import Logo from '/LOGO.png';
 import { authDataContext } from '../context/AuthContext';
 import { PiSignInBold } from "react-icons/pi";
 
-const serverUrl = 'http://localhost:5000';
+
 
 const NavBar = () => {
   const navigate = useNavigate();
   const { userData, setUserData } = useContext(authDataContext);
   const [showPopUp, setShowPopUp] = useState(false);
-
+  const { serverUrl } = useContext(authDataContext);
   const logout = async () => {
     try {
       const { data } = await axios.get(`${serverUrl}/api/user/logout`, {

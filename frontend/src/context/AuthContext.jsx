@@ -4,7 +4,7 @@ import axios from 'axios';
 export const authDataContext = createContext();
 
 const AuthContext = ({ children }) => {
-  const serverUrl = "http://localhost:5000";
+  const serverUrl = "https://lostlink-dhgn.onrender.com";
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(false);
 

@@ -3,13 +3,13 @@ import { User, Phone, MapPin, CalendarCheck } from "lucide-react";
 import { authDataContext } from '../context/AuthContext';
 import toast from "react-hot-toast";
 import axios from "axios";
-const serverUrl = "http://localhost:5000";
+
 
 const FoundItemCard = ({ item }) => {
    const { userData, setUserData } = useContext(authDataContext);
-    
-     const handleDelete = async () => {
-  
+   const { serverUrl } = useContext(authDataContext);
+   const handleDelete = async () => {
+      
 
   try {
     const response = await axios.delete(`${serverUrl}/api/item/delete/${item._id}`, {

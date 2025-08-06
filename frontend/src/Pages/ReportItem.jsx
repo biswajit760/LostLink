@@ -5,10 +5,10 @@ import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { authDataContext } from '../context/AuthContext';
 
-const serverUrl = "http://localhost:5000";
-
 const ReportItem = () => {
   const { loading, setLoading } = useContext(authDataContext);
+  const { serverUrl } = useContext(authDataContext);
+  
   const [formData, setFormData] = useState({
     reportType: "lost",
     itemName: "",
