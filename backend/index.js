@@ -12,7 +12,7 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-const allowedOrigins = ['http://localhost:5173', 'https://your-production-url.com'];
+const allowedOrigins = ['http://localhost:5173', 'https://lost-link-eight.vercel.app'];
 
 app.use(express.json());
 app.use(cookieParser());
