@@ -12,13 +12,11 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(cors({
-  origin: 'http://localhost:5173',
-  credentials: true,
-}));
+const allowedOrigins = ['http://localhost:5173', 'https://your-production-url.com'];
 
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors({origin: allowedOrigins, credentials: true}));
 
 app.use('/api/user', userRouter)
 app.use('/api/item', reportItemRouter)
